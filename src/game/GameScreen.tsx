@@ -151,10 +151,10 @@ function StarBackground({ animatedValue }: { animatedValue: Animated.Value }) {
               styles.star,
               {
                 left: star.x,
-                top: translateY,
                 width: star.size,
                 height: star.size,
                 opacity: 0.3 + (i % 5) * 0.1,
+                transform: [{ translateY }],
               },
             ]}
           />

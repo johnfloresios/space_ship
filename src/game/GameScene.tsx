@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import { View, Dimensions, StyleSheet } from 'react-native';
 import { GLView } from 'expo-gl';
+import { Renderer } from 'expo-three';
 import * as THREE from 'three';
 import { gameManager, GameManager } from './GameManager';
 
@@ -40,8 +41,8 @@ export default function GameScene({ onGameOver }: GameSceneProps) {
     const glHeight = gl.drawingBufferHeight;
 
     // Create renderer
-    const renderer = new THREE.WebGLRenderer({
-      context: gl,
+    const renderer = new Renderer({
+      gl,
       antialias: true,
       alpha: false,
     });
